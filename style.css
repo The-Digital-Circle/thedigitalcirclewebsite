@@ -251,7 +251,7 @@ a {
 }
 .section .section__inner {
   height: 100%;
-  max-width: 800px;
+  max-width: 1000px;
   margin: auto auto auto 0;
 }
 .section.section--hello {

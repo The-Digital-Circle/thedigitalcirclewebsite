@@ -1,42 +1,57 @@
-$(document).ready(function() {
 
-  typing( 0, $('.typewriter-text').data('text') );
+var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
 
-  function typing( index, text ) {
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
 
-    var textIndex = 1;
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
 
-    var tmp = setInterval(function() {
-      if ( textIndex < text[ index ].length + 1 ) {
-				$('.typewriter-text').text( text[ index ].substr( 0, textIndex ) );
-				textIndex++;
-			} else {
-        setTimeout(function() { deleting( index, text ) }, 2000);
-        clearInterval(tmp);
-      }
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
 
-		}, 150);
+        var that = this;
+        var delta = 200 - Math.random() * 100;
 
-	}
+        if (this.isDeleting) { delta /= 2; }
 
-	function deleting( index, text ) {
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
 
-    var textIndex = text[ index ].length;
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
 
-    var tmp = setInterval(function() {
-
-      if ( textIndex + 1 > 0 ) {
-        $('.typewriter-text').text( text[ index ].substr( 0, textIndex ) );
-        textIndex--;
-      } else {
-        index++;
-        if ( index == text.length ) { index = 0; }
-        typing( index, text );
-        clearInterval(tmp);
-      }
-
-		}, 150)
-
-  }
-
-});
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
