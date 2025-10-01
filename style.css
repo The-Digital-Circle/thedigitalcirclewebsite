@@ -269,6 +269,14 @@ a {
   background-color: #b5eec8;
   color: #111;
 }
+
+.section.section--hello img {
+  display: block;
+  width: clamp(128px, 25vw, 480px);
+  max-width: 100%;
+  height: auto;
+  flex: 0 0 auto;
+}
 .section.section--intro {
   background-color: white;
   color: #222;
