@@ -253,7 +253,7 @@ a {
   left: 0;
   right: 0;
   width: 100%;
-  height: 50px;
+  height: 52px;
 }
 .section svg.bottom {
   bottom: 0;
@@ -307,7 +307,8 @@ a {
   color: #111;
 }
 .section.section--portfolio svg {
-  top: -20px;
+  /* portfolio uses a shallower curve; nudge by 1px to maintain alignment with base svg change */
+  top: -21px;
   fill: orange;
 }
 .section.section--portfolio svg.bottom {
@@ -333,7 +334,8 @@ a {
   color: #111 !important;
 }
 .section.section--portfolio1 svg {
-  top: -50px;
+  /* adjust to match the base -51px shift */
+  top: -51px;
   fill: #3A99D8;
 }
 .section.section--pepperhill svg {
