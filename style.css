@@ -1,110 +1,11 @@
 html {
   box-sizing: border-box;
   font-family: 'AnkaCoderCondensed';
-    font-weight: normal;
-    font-style: normal;
-    color: #222;
+  font-weight: normal;
+  font-style: normal;
+  color: #222;
   font-size: 16px;
-}
-@media (min-width: 6.25em) {
-  html {
-    font-size: 17px;
-  }
-}
-@media (min-width: 12.5em) {
-  html {
-    font-size: 18px;
-  }
-}
-@media (min-width: 18.75em) {
-  html {
-    font-size: 19px;
-  }
-}
-@media (min-width: 25em) {
-  html {
-    font-size: 20px;
-  }
-}
-@media (min-width: 31.25em) {
-  html {
-    font-size: 21px;
-  }
-}
-@media (min-width: 37.5em) {
-  html {
-    font-size: 22px;
-  }
-}
-@media (min-width: 43.75em) {
-  html {
-    font-size: 23px;
-  }
-}
-@media (min-width: 50em) {
-  html {
-    font-size: 24px;
-  }
-}
-@media (min-width: 56.25em) {
-  html {
-    font-size: 25px;
-  }
-}
-@media (min-width: 62.5em) {
-  html {
-    font-size: 26px;
-  }
-}
-@media (min-width: 68.75em) {
-  html {
-    font-size: 27px;
-  }
-}
-@media (min-width: 75em) {
-  html {
-    font-size: 28px;
-  }
-}
-@media (min-width: 81.25em) {
-  html {
-    font-size: 29px;
-  }
-}
-@media (min-width: 87.5em) {
-  html {
-    font-size: 30px;
-  }
-}
-@media (min-width: 93.75em) {
-  html {
-    font-size: 31px;
-  }
-}
-@media (min-width: 100em) {
-  html {
-    font-size: 32px;
-  }
-}
-@media (min-width: 106.25em) {
-  html {
-    font-size: 33px;
-  }
-}
-@media (min-width: 112.5em) {
-  html {
-    font-size: 34px;
-  }
-}
-@media (min-width: 118.75em) {
-  html {
-    font-size: 35px;
-  }
-}
-@media (min-width: 125em) {
-  html {
-    font-size: 36px;
-  }
+  font-size: clamp(18px, 3.0vw, 40px);
 }
 
 *, *::before, *::after {
@@ -172,17 +73,8 @@ a {
   color: #111;
 }
 
-.section.section--about h1,
-.section.section--about h2,
-.section.section--about p,
-.section.section--about p a,
-.section.section--about .lead {
-  color: #111 !important;
-  opacity: 1 !important;
-}
-
-.section.section--about span {
-  color: #111 !important;
+.section.section--about {
+  color: #111;
 }
 .section.section--about svg {
   fill: #de5f5f;
@@ -211,16 +103,8 @@ a {
   color: #111;
 }
 
-.section.section--portfolio1 h1,
-.section.section--portfolio1 h2,
-.section.section--portfolio1 p,
-.section.section--portfolio1 .lead {
-  color: #111 !important;
-  opacity: 1 !important;
-}
-
-.section.section--portfolio1 span {
-  color: #111 !important;
+.section.section--portfolio1 {
+  color: #111;
 }
 .section.section--portfolio1 svg {
   top: -51px;
