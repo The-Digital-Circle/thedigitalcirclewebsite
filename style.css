@@ -117,122 +117,8 @@ a {
   text-decoration: none;
 }
 
-/**
- * The fixed Side
- */
-.side {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  z-index: 1000;
-  width: 50px;
-  border-right: 1px dashed rgba(0, 0, 0, 0.3);
-  color: rgba(0, 0, 0, 0.85);
-  font-family: 'AnkaCoderCondensed';
-  text-transform: uppercase;
-  letter-spacing: 0.0875rem;
-  font-size: 10px;
-  transition: all 0.3s cubic-bezier(0.05, 0.69, 0.14, 1);
-}
-.side:hover {
-  color: rgba(0, 0, 0, 0.85);
-}
-.side .side__inner {
-  position: relative;
-  height: 100%;
-  background-color: white;
-  white-space: nowrap;
-}
-.pre {
-  display: inline-block;
-  font-size: 12px;
-  margin: 0;
-  opacity: 1;
-  letter-spacing: 1.4px;
-  word-spacing: 0.2rem;
-  text-transform: uppercase;
-  margin-bottom: 1em;
-  color: inherit;
-}
-.pre span {
-  font-size: 0.9em;
-  margin-right: 0.4em;
-  opacity: 1;
-}
-.side .top,
-.side .bottom {
-  position: absolute;
-  left: 0;
-  transform: rotate(-90deg) perspective(1px);
-  transform-origin: 50px 50px;
-  height: 50px;
-  line-height: 50px;
-  white-space: nowrap;
-  word-spacing: 0.5rem;
-}
-.side .top {
-  top: 25px;
-  text-align: right;
-  color: black;
-}
-.side .bottom {
-  top: auto;
-  bottom: 75px;
-}
-.side .bottom:hover a {
-  color: rgba(0, 0, 0, 0.4);
-}
-.side .bottom:hover a:hover {
-  color: rgba(0, 0, 0, 0.8);
-}
-
-/**
- * The first navigation
- */
-.anchornav {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.anchornav li {
-  display: block;
-}
-.anchornav li::after {
-  content: "";
-  width: 1.3rem;
-  display: block;
-  height: 2px;
-  background: black;
-}
-.anchornav li:last-child::after {
-  display: none;
-}
-.anchornav a {
-  display: block;
-  padding: 1em 0;
-  font-family: 'AnkaCoderCondensed';
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 1.4px;
-  color: inherit;
-  transition: all 0.3s cubic-bezier(0.05, 0.69, 0.14, 1);
-}
-.anchornav a span {
-  display: inline;
-  padding: 0.5em 0 0;
-  opacity: 0.6;
-  letter-spacing: normal;
-  font-family: 'AnkaCoderCondensed';
-  text-transform: none;
-}
-.anchornav a:hover {
-  color: #de5f5f;
-}
-.anchornav a:hover span {
-  opacity: 1;
-  color: #181818;
-}
+/* sidebar and anchored numeric navigation removed */
+/* removed anchored navigation rules */
 
 /**
  * The different sections
@@ -277,6 +163,10 @@ a {
   height: auto;
   flex: 0 0 auto;
 }
+/* restore vertical gap under the logo (previously occupied by the numeric anchor) */
+.section.section--hello .block {
+  margin-top: 2.5rem;
+}
 .section.section--intro {
   background-color: white;
   color: #222;
@@ -286,8 +176,6 @@ a {
   color: #111;
 }
 
-.section.section--about a.pre,
-.section.section--about a.pre span,
 .section.section--about h1,
 .section.section--about h2,
 .section.section--about p,
@@ -328,8 +216,6 @@ a {
   color: #111;
 }
 
-.section.section--portfolio1 a.pre,
-.section.section--portfolio1 a.pre span,
 .section.section--portfolio1 h1,
 .section.section--portfolio1 h2,
 .section.section--portfolio1 p,
@@ -397,25 +283,7 @@ h2, .h2 {
   }
 }
 
-.pre {
-  display: inline-block;
-  font-size: 12px;
-  margin: 0;
-  opacity: 1;
-  letter-spacing: 1.4px;
-  word-spacing: 0.2rem;
-  text-transform: uppercase;
-  margin-bottom: 1em;
-  color: inherit;
-}
-.pre span {
-  font-size: 0.9em;
-  margin-right: 0.4em;
-  opacity: 1;
-}
-.pre:hover {
-  opacity: 1;
-}
+/* numeric anchor styles removed */
 
 p {
   font-size: 0.75rem;
