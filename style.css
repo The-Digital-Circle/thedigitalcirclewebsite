@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-  font-family: 'AnkaCoderCondensedRegular';
+  font-family: 'AnkaCoderCondensed';
     font-weight: normal;
     font-style: normal;
     color: #222;
@@ -129,7 +129,7 @@ a {
   width: 50px;
   border-right: 1px dashed rgba(0, 0, 0, 0.3);
   color: rgba(0, 0, 0, 0.85);
-  font-family: 'AnkaCoderCondensedRegular';
+  font-family: 'AnkaCoderCondensed';
   text-transform: uppercase;
   letter-spacing: 0.0875rem;
   font-size: 10px;
@@ -211,7 +211,7 @@ a {
 .anchornav a {
   display: block;
   padding: 1em 0;
-  font-family: 'AnkaCoderCondensedRegular';
+  font-family: 'AnkaCoderCondensed';
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 1.4px;
@@ -223,7 +223,7 @@ a {
   padding: 0.5em 0 0;
   opacity: 0.6;
   letter-spacing: normal;
-  font-family: 'AnkaCoderCondensedRegular';
+  font-family: 'AnkaCoderCondensed';
   text-transform: none;
 }
 .anchornav a:hover {
@@ -358,7 +358,7 @@ a {
  * Typo
  */
 h1, .h1, h2, .h2, h3, .h3, h4, .h5 {
-  font-family: 'AnkaCoderCondensedRegular';
+  font-family: 'AnkaCoderCondensed';
   font-weight: bold;
   margin: 0 0 1em;
   line-height: 1;
@@ -476,7 +476,7 @@ p a:hover {
   height: 100%;
 }
 .typewriter {
-  font-family: 'AnkaCoderCondensedRegular';
+  font-family: 'AnkaCoderCondensed';
   font-size: 50px;
   font-weight: bold;
   -webkit-text-stroke: 2px ;
