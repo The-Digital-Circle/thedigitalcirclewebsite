@@ -238,20 +238,17 @@ p a:hover {
   font-weight: bold;
 }
 
-/* Prevent the typewriter/typewrite text from wrapping unexpectedly */
 .typewrite {
   display: inline-block;
   white-space: nowrap;
 }
+
 .typewrite > .wrap {
-  white-space: pre; /* preserve intentional spaces */
+  white-space: pre;
 }
-/* caret for the typewrite effect (moved from JS injection) */
 .typewrite > .wrap {
   border-right: 0.08em solid currentColor;
 }
-/* Keep the hello heading (and its typewrite content) on one line when space allows */
-/* keep the hello heading on one line when there's room; use flex to avoid inline wrapping glitches */
 .section.section--hello .block h1 {
   display: inline-flex;
   flex-wrap: nowrap;
@@ -259,10 +256,15 @@ p a:hover {
   gap: 0.5rem;
   white-space: nowrap;
 }
+
+.section.section--hello .hello-text {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
 @media (max-width: 520px) {
   .section.section--hello .block h1 {
     display: block;
-    white-space: normal; /* allow wrapping on small screens */
+    white-space: normal;
   }
 }
 @keyframes cursor {
