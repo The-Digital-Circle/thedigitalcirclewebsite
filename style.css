@@ -246,6 +246,10 @@ p a:hover {
 .typewrite > .wrap {
   white-space: pre; /* preserve intentional spaces */
 }
+/* caret for the typewrite effect (moved from JS injection) */
+.typewrite > .wrap {
+  border-right: 0.08em solid currentColor;
+}
 /* Keep the hello heading (and its typewrite content) on one line when space allows */
 /* keep the hello heading on one line when there's room; use flex to avoid inline wrapping glitches */
 .section.section--hello .block h1 {

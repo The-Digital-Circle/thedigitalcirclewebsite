@@ -1,57 +1,52 @@
 
-var TxtType = function(el, toRotate, period) {
-        this.toRotate = toRotate;
-        this.el = el;
-        this.loopNum = 0;
-        this.period = parseInt(period, 10) || 2000;
-        this.txt = '';
-        this.tick();
-        this.isDeleting = false;
-    };
+function TxtType(el, toRotate, period) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loop = 0;
+    this.period = parseInt(period, 10) || 2000;
+    this.txt = '';
+    this.deleting = false;
+    // ensure there's a single .wrap child we update
+    this.wrap = el.querySelector('.wrap');
+    if (!this.wrap) {
+        this.wrap = document.createElement('span');
+        this.wrap.className = 'wrap';
+        el.appendChild(this.wrap);
+    }
+    this.tick();
+}
 
-    TxtType.prototype.tick = function() {
-        var i = this.loopNum % this.toRotate.length;
-        var fullTxt = this.toRotate[i];
+TxtType.prototype.tick = function() {
+    var i = this.loop % this.toRotate.length;
+    var full = this.toRotate[i];
 
-        if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
-        }
+    if (this.deleting) this.txt = full.substring(0, this.txt.length - 1);
+    else this.txt = full.substring(0, this.txt.length + 1);
 
-        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+    // update only textContent of the wrap
+    this.wrap.textContent = this.txt;
 
-        var that = this;
-        var delta = 200 - Math.random() * 100;
+    var delta = 200 - Math.random() * 100;
+    if (this.deleting) delta /= 2;
 
-        if (this.isDeleting) { delta /= 2; }
-
-        if (!this.isDeleting && this.txt === fullTxt) {
+    if (!this.deleting && this.txt === full) {
         delta = this.period;
-        this.isDeleting = true;
-        } else if (this.isDeleting && this.txt === '') {
-        this.isDeleting = false;
-        this.loopNum++;
+        this.deleting = true;
+    } else if (this.deleting && this.txt === '') {
+        this.deleting = false;
+        this.loop++;
         delta = 500;
-        }
+    }
 
-        setTimeout(function() {
-        that.tick();
-        }, delta);
-    };
+    var self = this;
+    setTimeout(function() { self.tick(); }, delta);
+};
 
-    window.onload = function() {
-        var elements = document.getElementsByClassName('typewrite');
-        for (var i=0; i<elements.length; i++) {
-            var toRotate = elements[i].getAttribute('data-type');
-            var period = elements[i].getAttribute('data-period');
-            if (toRotate) {
-              new TxtType(elements[i], JSON.parse(toRotate), period);
-            }
-        }
-        // INJECT CSS
-        var css = document.createElement("style");
-        css.type = "text/css";
-        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid currentColor }";
-        document.body.appendChild(css);
-    };
+document.addEventListener('DOMContentLoaded', function() {
+    var els = document.getElementsByClassName('typewrite');
+    for (var i = 0; i < els.length; i++) {
+        var toRotate = els[i].getAttribute('data-type');
+        var period = els[i].getAttribute('data-period');
+        if (toRotate) new TxtType(els[i], JSON.parse(toRotate), period);
+    }
+});
