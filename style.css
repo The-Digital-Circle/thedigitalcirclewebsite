@@ -117,9 +117,6 @@ a {
   text-decoration: none;
 }
 
-/* sidebar and anchored numeric navigation removed */
-/* removed anchored navigation rules */
-
 /**
  * The different sections
  */
@@ -163,7 +160,6 @@ a {
   height: auto;
   flex: 0 0 auto;
 }
-/* restore vertical gap under the logo (previously occupied by the numeric anchor) */
 .section.section--hello .block {
   margin-top: 2.5rem;
 }
@@ -203,7 +199,6 @@ a {
   color: #111;
 }
 .section.section--portfolio svg {
-  /* portfolio uses a shallower curve; nudge by 1px to maintain alignment with base svg change */
   top: -21px;
   fill: orange;
 }
@@ -228,7 +223,6 @@ a {
   color: #111 !important;
 }
 .section.section--portfolio1 svg {
-  /* adjust to match the base -51px shift */
   top: -51px;
   fill: #3A99D8;
 }
@@ -282,8 +276,6 @@ h2, .h2 {
     font-size: 2.5rem;
   }
 }
-
-/* numeric anchor styles removed */
 
 p {
   font-size: 0.75rem;
@@ -373,15 +365,11 @@ p a:hover {
   .typewriter { font-size: 60px; }
 }
 
-/* Adjust vertical rhythm in Services (section--portfolio1)
-   Reduce the gap immediately after a heading and increase the gap
-   after paragraphs so the visual flow reads: heading -> close paragraph -> larger gap -> next heading */
 .section.section--portfolio1 .block h2 {
-  margin-top: 1rem; /* leading gap */
-  margin-bottom: 1rem; /* match other sections' heading bottom spacing */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .section.section--portfolio1 .block p,
 .section.section--portfolio1 .block .lead {
   margin-top: 0.35rem;
-  margin-bottom: 1rem; /* match other sections' paragraph bottom spacing */
-}
+  margin-bottom: 1rem;
