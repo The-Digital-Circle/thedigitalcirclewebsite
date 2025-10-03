@@ -5,7 +5,7 @@ html {
   font-style: normal;
   color: #222;
   font-size: 16px;
-  font-size: clamp(18px, 2.2vw, 40px);
+  font-size: clamp(18px, 2.2vw, 24px);
 }
 
 *, *::before, *::after {
